@@ -1,0 +1,22 @@
+# Dockerfile.build
+FROM denoland/deno:2.0.6
+
+WORKDIR /app
+
+# Copiar archivos necesarios
+COPY deno.json .
+COPY src/ src/
+
+# Instalar dependencias y compilar
+RUN deno cache src/main.ts && \
+    deno compile \
+    --target x86_64-unknown-linux-gnu \
+    --allow-net \
+    --allow-read \
+    --allow-env \
+    --allow-ffi \
+    --output processor \
+    --node-modules-dir=true \
+    src/main.ts
+
+# El binario compilado estará en /app/processor

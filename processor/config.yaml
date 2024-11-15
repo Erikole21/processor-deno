@@ -1,0 +1,11 @@
+redis:
+  host: "172.28.80.1"
+  port: 6379  
+  db: 4
+
+queue:
+  name: my-queue
+  concurrency: 5
+  
+app:
+  logLevel: "info"

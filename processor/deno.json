@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {      
+      "lib": ["deno.ns", "deno.unstable", "dom"],
+      "strict": true
+    },    
+    "nodeModulesDir": "auto",
+    "lint": {
+      "files": {
+        "include": ["src/"]
+      },
+      "rules": {
+        "tags": ["recommended"]
+      }
+    },
+    "fmt": {
+      "files": {
+        "include": ["src/"]
+      },
+      "options": {
+        "useTabs": false,
+        "lineWidth": 80,
+        "indentWidth": 2,
+        "singleQuote": true
+      }
+    }
+  }
